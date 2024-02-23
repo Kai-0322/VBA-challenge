@@ -30,11 +30,7 @@ Sub analysis()
             Range("L" & TickerRow).Value = TotalVolume
             ClosePrice = Cells(i, 6).Value
             YearlyChange = ClosePrice - OpenPrice
-            Range("J" & TickerRow).Value = YearlyChange
-            
-            TickerRow = TickerRow + 1
-            
-            
+            Range("J" & TickerRow).Value = YearlyChange            
                 If OpenPrice = 0 Then
                     PercentChange = 0
                 Else
@@ -42,6 +38,8 @@ Sub analysis()
                 End If
             Range("K" & TickerRow).Value = PercentChange
             Range("K" & TickerRow).NumberFormat = "0.00%"
+
+            TickerRow = TickerRow + 1
             
             TotalVolume = 0
             
